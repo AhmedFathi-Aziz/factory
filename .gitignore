@@ -8,3 +8,11 @@ prisma/.env
 .next/
 out/
 dist/
+
+.env.*
+prisma/*.db
+.vercel/
+.vscode/
+.idea/
+out/
+dist/
