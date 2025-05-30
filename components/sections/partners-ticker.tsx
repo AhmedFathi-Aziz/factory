@@ -70,26 +70,26 @@ export function PartnersTicker() {
             </div>
             {/* Second set of partners (duplicate for seamless loop) */}
             {partners.length > 1 && (
-              <div className="flex">
-                {partners.map((partner, idx) => (
-                  <div
-                    key={`second-${idx}`}
-                    className="flex-shrink-0 flex flex-col items-center justify-center h-44 sm:h-52 w-60 sm:w-72 lg:w-80 mx-3"
-                  >
-                    <div className="text-center p-6 bg-white rounded-2xl border border-gray-200 w-full h-full flex flex-col justify-center shadow-lg">
-                      <img
-                        src={partner.logo || "/placeholder.svg"}
-                        alt={partner.name}
-                        className="h-16 sm:h-20 w-auto mx-auto mb-4 object-contain rounded-lg shadow-md bg-gray-50"
-                      />
-                      <h3 className="font-semibold text-gray-800 text-base sm:text-lg mb-1 break-words whitespace-normal">
-                        {partner.name}
-                      </h3>
-                      <p className="text-xs sm:text-sm text-gray-500 break-words whitespace-normal">{partner.industry}</p>
-                    </div>
+            <div className="flex">
+              {partners.map((partner, idx) => (
+                <div
+                  key={`second-${idx}`}
+                  className="flex-shrink-0 flex flex-col items-center justify-center h-44 sm:h-52 w-60 sm:w-72 lg:w-80 mx-3"
+                >
+                  <div className="text-center p-6 bg-white rounded-2xl border border-gray-200 w-full h-full flex flex-col justify-center shadow-lg">
+                    <img
+                      src={partner.logo || "/placeholder.svg"}
+                      alt={partner.name}
+                      className="h-16 sm:h-20 w-auto mx-auto mb-4 object-contain rounded-lg shadow-md bg-gray-50"
+                    />
+                    <h3 className="font-semibold text-gray-800 text-base sm:text-lg mb-1 break-words whitespace-normal">
+                      {partner.name}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-gray-500 break-words whitespace-normal">{partner.industry}</p>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
+            </div>
             )}
           </motion.div>
         </div>
