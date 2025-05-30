@@ -2,18 +2,40 @@
 
 import { motion } from "framer-motion"
 import { useLanguage } from "@/hooks/use-language"
-import { useEffect, useState } from "react"
+
+const hardcodedPartners = [
+  {
+    name: "Provimi Jordan",
+    industry: "Feed Concentrate",
+    logo: "/images/jordan1.png",
+  },
+  {
+    name: "Sunukrut Poultry Farm",
+    industry: "Poultry",
+    logo: "/images/sen.webp",
+  },
+  {
+    name: "National Poultry Farm",
+    industry: "Poultry",
+    logo: "/images/jor3.jpg",
+  },
+  {
+    name: "Egyptian feed companies",
+    industry: "Feed Manufacturer",
+    logo: "/images/egypt.png",
+  },
+  {
+    name: "UAE feed companies",
+    industry: "Feed Manufacturer",
+    logo: "/images/uae.png",
+  },
+];
 
 export function PartnersTicker() {
-  const { language, isRTL } = useLanguage()
-  const [partners, setPartners] = useState<any[]>([])
+  const { language, isRTL } = useLanguage();
 
-  useEffect(() => {
-    fetch("/api/partners")
-      .then((res) => res.json())
-      .then((data) => setPartners(data))
-      .catch(() => setPartners([]))
-  }, [])
+  // Duplicate the partners for seamless looping
+  const tickerPartners = [...hardcodedPartners, ...hardcodedPartners];
 
   return (
     <section className="py-16 sm:py-20 bg-white border-y border-gray-200" dir={isRTL ? "rtl" : "ltr"}>
@@ -36,64 +58,38 @@ export function PartnersTicker() {
         <div className="relative overflow-hidden w-full">
           <motion.div
             className="flex"
-            style={{ width: "200%" }}
-            animate={{ x: isRTL ? [0, 100, 0] : [0, -100, 0] }}
+            style={{ width: "max-content" }}
+            animate={{ x: ["0%", "50%"] }}
             transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 6,
+                duration: 20, // Adjust speed here
                 ease: "linear",
               },
             }}
           >
-            {/* First set of partners */}
-            <div className="flex">
-              {partners.map((partner, idx) => (
-                <div
-                  key={`first-${idx}`}
-                  className="flex-shrink-0 flex flex-col items-center justify-center h-44 sm:h-52 w-60 sm:w-72 lg:w-80 mx-3"
-                >
-                  <div className="text-center p-6 bg-white rounded-2xl border border-gray-200 w-full h-full flex flex-col justify-center shadow-lg">
-                    <img
-                      src={partner.logo || "/placeholder.svg"}
-                      alt={partner.name}
-                      className="h-16 sm:h-20 w-auto mx-auto mb-4 object-contain rounded-lg shadow-md bg-gray-50"
-                    />
-                    <h3 className="font-semibold text-gray-800 text-base sm:text-lg mb-1 break-words whitespace-normal">
-                      {partner.name}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-gray-500 break-words whitespace-normal">{partner.industry}</p>
-                  </div>
+            {tickerPartners.map((partner, idx) => (
+              <div
+                key={idx}
+                className="flex-shrink-0 flex flex-col items-center justify-center h-44 sm:h-52 w-60 sm:w-72 lg:w-80 mx-3"
+              >
+                <div className="text-center p-6 bg-white rounded-2xl border border-gray-200 w-full h-full flex flex-col justify-center shadow-lg">
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="h-16 sm:h-20 w-auto mx-auto mb-4 object-contain rounded-lg shadow-md bg-gray-50"
+                  />
+                  <h3 className="font-semibold text-gray-800 text-base sm:text-lg mb-1 break-words whitespace-normal">
+                    {partner.name}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-500 break-words whitespace-normal">{partner.industry}</p>
                 </div>
-              ))}
-            </div>
-            {/* Second set of partners (duplicate for seamless loop) */}
-            {partners.length > 1 && (
-            <div className="flex">
-              {partners.map((partner, idx) => (
-                <div
-                  key={`second-${idx}`}
-                  className="flex-shrink-0 flex flex-col items-center justify-center h-44 sm:h-52 w-60 sm:w-72 lg:w-80 mx-3"
-                >
-                  <div className="text-center p-6 bg-white rounded-2xl border border-gray-200 w-full h-full flex flex-col justify-center shadow-lg">
-                    <img
-                      src={partner.logo || "/placeholder.svg"}
-                      alt={partner.name}
-                      className="h-16 sm:h-20 w-auto mx-auto mb-4 object-contain rounded-lg shadow-md bg-gray-50"
-                    />
-                    <h3 className="font-semibold text-gray-800 text-base sm:text-lg mb-1 break-words whitespace-normal">
-                      {partner.name}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-gray-500 break-words whitespace-normal">{partner.industry}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            )}
+              </div>
+            ))}
           </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }

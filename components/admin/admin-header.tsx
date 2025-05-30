@@ -12,8 +12,8 @@ const navigation = [
   { name: "Dashboard", nameAr: "لوحة التحكم", href: "/admin" },
   { name: "Products", nameAr: "المنتجات", href: "/admin/services" },
   { name: "News", nameAr: "الأخبار", href: "/admin/news" },
-  { name: "Partners", nameAr: "الشركاء", href: "/admin/partners" },
-  { name: "Gallery", nameAr: "المعرض", href: "/admin/gallery" },
+  { name: "About", nameAr: "من نحن", href: "/admin/pages/about" },
+  { name: "Contact", nameAr: "اتصل بنا", href: "/admin/pages/contact" },
 ]
 
 export function AdminHeader() {
