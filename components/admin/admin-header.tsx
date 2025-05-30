@@ -13,7 +13,7 @@ const navigation = [
   { name: "Products", nameAr: "المنتجات", href: "/admin/services" },
   { name: "News", nameAr: "الأخبار", href: "/admin/news" },
   { name: "About", nameAr: "من نحن", href: "/admin/pages/about" },
-  { name: "Contact", nameAr: "اتصل بنا", href: "/admin/pages/contact" },
+  { name: "Contact", nameAr: "اتصل بنا", href: "/admin/pages/locontact" },
 ]
 
 export function AdminHeader() {
