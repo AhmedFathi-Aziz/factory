@@ -38,14 +38,14 @@ export default function ImageSlider({ images, autoPlay = true, speed = 3, isRTL 
   if (!images || images.length === 0) return null
 
   return (
-    <div className="relative w-full h-[28rem] md:h-[40rem] bg-white mt-8 rounded-2xl shadow-lg overflow-hidden flex items-center justify-center">
-      <div className="relative w-full h-[28rem] md:h-[40rem] flex items-center justify-center">
+    <div className="relative w-full h-96 md:h-[32rem] bg-white mt-8 rounded-2xl shadow-lg overflow-hidden flex items-center justify-center">
+      <div className="relative w-full h-96 md:h-[32rem] flex items-center justify-center">
         {images.map((src, idx) => (
           <motion.img
             key={src}
             src={src}
             alt={`Slider image ${idx + 1}`}
-            className="w-full h-[28rem] md:h-[40rem] object-cover rounded-2xl absolute"
+            className="w-full h-96 md:h-[32rem] object-cover rounded-2xl absolute"
             initial={false}
             animate={{
               opacity: idx === current ? 1 : 0,

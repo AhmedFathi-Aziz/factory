@@ -6,7 +6,9 @@ export default function ProductsPage() {
   return (
     <>
       <Header />
-      <ProductsList />
+      <div className="mt-8 sm:mt-12">
+        <ProductsList />
+      </div>
       <Footer />
     </>
   );

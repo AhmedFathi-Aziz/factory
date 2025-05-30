@@ -89,17 +89,17 @@ export default function ContactPage() {
                 <li className="flex items-center gap-4">
                   <Phone className="h-6 w-6 text-blue-600 flex-shrink-0" />
                   <span className="font-semibold w-28 block text-gray-700">{language === "ar" ? "جوال" : "Mobile"}:</span>
-                  <span className="text-gray-700 text-base" dir="ltr">{contactInfo.mobile}</span>
+                  <span className="text-gray-700 text-base whitespace-nowrap" dir="ltr">{contactInfo.mobile}</span>
                 </li>
                 <li className="flex items-center gap-4">
                   <Phone className="h-6 w-6 text-green-600 flex-shrink-0" />
                   <span className="font-semibold w-28 block text-gray-700">{language === "ar" ? "هاتف" : "Telephone"}:</span>
-                  <span className="text-gray-700 text-base" dir="ltr">{contactInfo.telephone}</span>
+                  <span className="text-gray-700 text-base whitespace-nowrap" dir="ltr">{contactInfo.telephone}</span>
                 </li>
                 <li className="flex items-center gap-4">
                   <Phone className="h-6 w-6 text-purple-600 flex-shrink-0" />
                   <span className="font-semibold w-28 block text-gray-700">{language === "ar" ? "فاكس" : "Fax"}:</span>
-                  <span className="text-gray-700 text-base" dir="ltr">{contactInfo.fax}</span>
+                  <span className="text-gray-700 text-base whitespace-nowrap" dir="ltr">{contactInfo.fax}</span>
                 </li>
                 <li className="flex items-center gap-4">
                   <MapPin className="h-6 w-6 text-orange-600 flex-shrink-0" />

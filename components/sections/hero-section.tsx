@@ -32,16 +32,16 @@ export function HeroSection() {
             className={`space-y-4 sm:space-y-6 bg-white/90 rounded-xl shadow-lg p-6 sm:p-10 lg:p-14 animate-fade-in ${isRTL ? 'text-right font-arabic' : 'text-right'}`}
           >
             <h1
-              className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-primary"
+              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 text-primary"
             >
               {t("heroTitle")}
             </h1>
             <p
-              className="text-base sm:text-lg text-gray-700 max-w-2xl mb-4"
+              className="text-sm sm:text-base text-gray-700 max-w-2xl mb-4"
             >
               {t("heroSubtitle")}
             </p>
-            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mb-8">{t("heroDescription")}</p>
+            <p className="text-xs sm:text-sm text-gray-600 max-w-2xl mb-8">{t("heroDescription")}</p>
           </motion.div>
         </div>
       </div>

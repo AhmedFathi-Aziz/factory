@@ -51,7 +51,7 @@ export default function GalleryPage() {
       <main>
         <section className="min-h-[60vh] flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-white to-teal-50 py-12 pt-28">
           <h1 className={`text-3xl md:text-4xl font-bold mb-8 ${isRTL ? "font-arabic" : ""}`}>{language === "ar" ? "معرض الصور" : "Gallery"}</h1>
-          <div className="w-full max-w-2xl">
+          <div className="w-full max-w-2xl px-4 md:px-0">
             <Carousel>
               <CarouselContent>
                 <AnimatePresence initial={false} mode="wait">
