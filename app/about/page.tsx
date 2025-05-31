@@ -154,6 +154,25 @@ function AboutContent() {
         </div>
       </section>
 
+      {/* Video Section */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h3 className="text-2xl font-semibold mb-6 text-center font-arabic whitespace-pre-line">
+            {`رحلة العومة.. ما بعد البحر\nصحيفة البيان الإماراتية`}
+          </h3>
+          <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-xl shadow-lg">
+            <iframe
+              className="absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/8IsrlgL6_Qo"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
       {/* Values Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
